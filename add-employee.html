@@ -3,145 +3,148 @@
 <html lang="en">
 
 <head>
- 
-    
-  
+
+
+
     <style>
-       .profile-pic-wrapper {
-  height: 100vh;
-  width: 100%;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.pic-holder {
-  text-align: center;
-  position: relative;
-  border-radius: 50%;
-  width: 150px;
-  height: 150px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
-}
+        .profile-pic-wrapper {
+            height: 100vh;
+            width: 100%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
 
-.pic-holder .pic {
-  height: 100%;
-  width: 100%;
-  -o-object-fit: cover;
-  object-fit: cover;
-  -o-object-position: center;
-  object-position: center;
-}
+        .pic-holder {
+            text-align: center;
+            position: relative;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
 
-.pic-holder .upload-file-block,
-.pic-holder .upload-loader {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(90, 92, 105, 0.7);
-  color: #f8f9fc;
-  font-size: 12px;
-  font-weight: 600;
-  opacity: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s;
-}
+        .pic-holder .pic {
+            height: 100%;
+            width: 100%;
+            -o-object-fit: cover;
+            object-fit: cover;
+            -o-object-position: center;
+            object-position: center;
+        }
 
-.pic-holder .upload-file-block {
-  cursor: pointer;
-}
+        .pic-holder .upload-file-block,
+        .pic-holder .upload-loader {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(90, 92, 105, 0.7);
+            color: #f8f9fc;
+            font-size: 12px;
+            font-weight: 600;
+            opacity: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
 
-.pic-holder:hover .upload-file-block,
-.uploadProfileInput:focus ~ .upload-file-block {
-  opacity: 1;
-}
+        .pic-holder .upload-file-block {
+            cursor: pointer;
+        }
 
-.pic-holder.uploadInProgress .upload-file-block {
-  display: none;
-}
+        .pic-holder:hover .upload-file-block,
+        .uploadProfileInput:focus~.upload-file-block {
+            opacity: 1;
+        }
 
-.pic-holder.uploadInProgress .upload-loader {
-  opacity: 1;
-}
+        .pic-holder.uploadInProgress .upload-file-block {
+            display: none;
+        }
 
-/* Snackbar css */
-.snackbar {
-  visibility: hidden;
-  min-width: 250px;
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  border-radius: 2px;
-  padding: 16px;
-  position: fixed;
-  z-index: 1;
-  left: 50%;
-  bottom: 30px;
-  font-size: 14px;
-  transform: translateX(-50%);
-}
+        .pic-holder.uploadInProgress .upload-loader {
+            opacity: 1;
+        }
 
-.snackbar.show {
-  visibility: visible;
-  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-  animation: fadein 0.5s, fadeout 0.5s 2.5s;
-}
+        /* Snackbar css */
+        .snackbar {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 2px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1;
+            left: 50%;
+            bottom: 30px;
+            font-size: 14px;
+            transform: translateX(-50%);
+        }
 
-@-webkit-keyframes fadein {
-  from {
-    bottom: 0;
-    opacity: 0;
-  }
-  to {
-    bottom: 30px;
-    opacity: 1;
-  }
-}
+        .snackbar.show {
+            visibility: visible;
+            -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
 
-@keyframes fadein {
-  from {
-    bottom: 0;
-    opacity: 0;
-  }
-  to {
-    bottom: 30px;
-    opacity: 1;
-  }
-}
+        @-webkit-keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
 
-@-webkit-keyframes fadeout {
-  from {
-    bottom: 30px;
-    opacity: 1;
-  }
-  to {
-    bottom: 0;
-    opacity: 0;
-  }
-}
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
 
-@keyframes fadeout {
-  from {
-    bottom: 30px;
-    opacity: 1;
-  }
-  to {
-    bottom: 0;
-    opacity: 0;
-  }
-}
+        @keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
 
-    
-        </style>
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+
+            to {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+
+            to {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+    </style>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -213,7 +216,8 @@
                                 </span>
                                 <div class="dropdown-menu p-0 m-0">
                                     <form>
-                                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                                        <input class="form-control" type="search" placeholder="Search"
+                                            aria-label="Search">
                                     </form>
                                 </div>
                             </div>
@@ -231,7 +235,8 @@
                                             <span class="success"><i class="ti-user"></i></span>
                                             <div class="media-body">
                                                 <a href="#">
-                                                    <p><strong>Martin</strong> has added a <strong>customer</strong> Successfully
+                                                    <p><strong>Martin</strong> has added a <strong>customer</strong>
+                                                        Successfully
                                                     </p>
                                                 </a>
                                             </div>
@@ -250,7 +255,8 @@
                                             <span class="danger"><i class="ti-bookmark"></i></span>
                                             <div class="media-body">
                                                 <a href="#">
-                                                    <p><strong>Robin</strong> marked a <strong>ticket</strong> as unsolved.
+                                                    <p><strong>Robin</strong> marked a <strong>ticket</strong> as
+                                                        unsolved.
                                                     </p>
                                                 </a>
                                             </div>
@@ -268,8 +274,9 @@
                                         <li class="media dropdown-item">
                                             <span class="success"><i class="ti-image"></i></span>
                                             <div class="media-body">
-              validation                                                <a href="#">
-                                                    <p><strong> James.</strong> has added a<strong>customer</strong> Successfully
+                                                validation <a href="#">
+                                                    <p><strong> James.</strong> has added a<strong>customer</strong>
+                                                        Successfully
                                                     </p>
                                                 </a>
                                             </div>
@@ -315,16 +322,17 @@
             <div class="quixnav-scroll">
                 <ul class="metismenu" id="menu">
                     <li class="nav-label first">Main Menu</li>
-                    <li><a href="index2.html"><i class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a>
+                    <li><a href="index2.html"><i class="icon icon-single-04"></i><span
+                                class="nav-text">Dashboard</span></a>
                     </li>
-         
+
 
                     <li class="nav-label">PAGES</li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                                 class="bx bx-user-circle"></i><span class="nav-text">Employees</span></a>
                         <ul aria-expanded="false">
                             <li><a href="./add-employee.html">Add Employee</a></li>
-                            <li><a  href="./view-employee.html" aria-expanded="false">List Employee</a>
+                            <li><a href="./view-employee.html" aria-expanded="false">List Employee</a>
                                 <!-- <ul aria-expanded="false">
                                     <li><a href="./email-compose.html">Compose</a></li>
                                     <li><a href="./email-inbox.html">Inbox</a></li>
@@ -332,34 +340,34 @@
                                 </ul> -->
                             </li>
                             <li><a href="./expiry.html">Expiry Details</a></li>
-                            
+
                         </ul>
                     </li>
-                    <li><a  href="./category.html" aria-expanded="false"><i
-                                class="bx bx-category-alt"></i><span class="nav-text">Category</span></a>
-                       
-                    </li>
-                    <li><a  href="./company.html" aria-expanded="false"><i
-                        class="bx bx-buildings"></i><span class="nav-text">Company</span></a>
-               
-            </li>
-            <li><a class="" href="./branches.html" aria-expanded="false"><i
-                class="bx bx-git-merge"></i><span class="nav-text">Branches</span></a>
-       
-              </li>
-                    
-                    <li class="nav-label">misc</li>
-                    
+                    <li><a href="./category.html" aria-expanded="false"><i class="bx bx-category-alt"></i><span
+                                class="nav-text">Category</span></a>
 
-                   
+                    </li>
+                    <li><a href="./company.html" aria-expanded="false"><i class="bx bx-buildings"></i><span
+                                class="nav-text">Company</span></a>
+
+                    </li>
+                    <li><a class="" href="./branches.html" aria-expanded="false"><i class="bx bx-git-merge"></i><span
+                                class="nav-text">Branches</span></a>
+
+                    </li>
+
+                    <li class="nav-label">misc</li>
+
+
+
                     <li><a href="https://swynfords.com/" aria-expanded="false"><i class="bx bx-support"></i><span
                                 class="nav-text">Support</span></a></li>
-                     <li><a href="https://swynfords.com/" aria-expanded="false"><i class="bx bx-info-circle"></i><span
-                                    class="nav-text">About</span></a></li>
-                    
-                   
+                    <li><a href="https://swynfords.com/" aria-expanded="false"><i class="bx bx-info-circle"></i><span
+                                class="nav-text">About</span></a></li>
 
-                  
+
+
+
                 </ul>
             </div>
         </div>
@@ -382,7 +390,7 @@
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                         <ol class="breadcrumb">
                             <a href="view-employee.html">
-                            <button type="button" class="btn btn-primary" >View Employee</button></a>
+                                <button type="button" class="btn btn-primary">View Employee</button></a>
                         </ol>
                     </div>
                 </div>
@@ -402,27 +410,29 @@
 
 
                                                 <div class="form-group row">
-                                                     <label class="col-lg-5 col-form-label" >upload Photo
+                                                    <label class="col-lg-5 col-form-label">upload Photo
                                                         <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="pic-holder">
-                                                      <!-- uploaded pic shown here -->
-                                                      <img id="profilePic" class="pic" src="https://source.unsplash.com/random/150x150?person">
-                                                  
-                                                      <Input class="uploadProfileInput" type="file" name="profile_pic" id="newProfilePhoto" accept="image/*" style="opacity: 0;" />
-                                                      <label for="newProfilePhoto" class="upload-file-block">
-                                                        <div class="text-center">
-                                                          <div class="mb-2">
-                                                            <i class="fa fa-camera fa-2x"></i>
-                                                          </div>
-                                                          <div class="text-uppercase">
-                                                            Update <br /> Profile Photo
-                                                          </div>
-                                                        </div>
-                                                      </label>
+                                                        <!-- uploaded pic shown here -->
+                                                        <img id="profilePic" class="pic"
+                                                            src="https://source.unsplash.com/random/150x150?person">
+
+                                                        <Input class="uploadProfileInput" type="file" name="profile_pic"
+                                                            id="newProfilePhoto" accept="image/*" style="opacity: 0;" />
+                                                        <label for="newProfilePhoto" class="upload-file-block">
+                                                            <div class="text-center">
+                                                                <div class="mb-2">
+                                                                    <i class="fa fa-camera fa-2x"></i>
+                                                                </div>
+                                                                <div class="text-uppercase">
+                                                                    Update <br /> Profile Photo
+                                                                </div>
+                                                            </div>
+                                                        </label>
                                                     </div>
-                                                  </div>
-                                                   
+                                                </div>
+
 
 
                                                 <div class="form-group row">
@@ -430,7 +440,8 @@
                                                         <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="text" class="form-control" id="val-username" name="val-username" placeholder="Enter name..">
+                                                        <input type="text" class="form-control" id="val-username"
+                                                            name="val-username" placeholder="Enter name..">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -438,7 +449,8 @@
                                                         <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="text" class="form-control" id="val-username" name="val-username" placeholder="Enter nick name..">
+                                                        <input type="text" class="form-control" id="val-username"
+                                                            name="val-username" placeholder="Enter nick name..">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -446,29 +458,31 @@
                                                             class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="text" class="form-control" id="val-email" name="val-email" placeholder="Your valid email..">
+                                                        <input type="text" class="form-control" id="val-email"
+                                                            name="val-email" placeholder="Your valid email..">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label" >Date of Birth
+                                                    <label class="col-lg-4 col-form-label">Date of Birth
                                                         <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="date" class="form-control" id="val-password" name="val-password" placeholder="Choose a safe one..">
+                                                        <input type="date" class="form-control" id="val-password"
+                                                            name="val-password" placeholder="Choose a safe one..">
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group row">
-                                                    
-                                                    <label class="col-lg-4 col-form-label" >Gender
+
+                                                    <label class="col-lg-4 col-form-label">Gender
                                                         <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                    <label class="radio-inline">
-                                                        <input type="radio" name="optradio"> male</label>
-                                                    <label class="radio-inline">
-                                                        <input type="radio" name="optradio"> female</label>
-                                                   </div>
+                                                        <label class="radio-inline">
+                                                            <input type="radio" name="optradio"> male</label>
+                                                        <label class="radio-inline">
+                                                            <input type="radio" name="optradio"> female</label>
+                                                    </div>
                                                 </div>
 
                                                 <div class="form-group row">
@@ -487,76 +501,88 @@
                                                             <option value="AB">AB+</option>
                                                             <option value="AB">AB-</option>
                                                             <option value="B-">B-</option>
-                                       
+
                                                         </select>
                                                     </div>
                                                 </div>
 
-                                                
+
 
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label" for="val-confirm-password">Employee id <span
+                                                    <label class="col-lg-4 col-form-label"
+                                                        for="val-confirm-password">Employee id <span
                                                             class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="text" class="form-control" id="val-username" name="val-username" placeholder="E-3944">
+                                                        <input type="text" class="form-control" id="val-username"
+                                                            name="val-username" placeholder="E-3944">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label" for="val-suggestions">Uid <span
-                                                            class="text-danger">*</span>
-                                                    </label>
-                                                    <div class="col-lg-6">
-                                                        <input type="text" class="form-control" id="val-username" name="val-username" placeholder="Enter uid">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label" for="val-currency">Mobile number
+                                                    <label class="col-lg-4 col-form-label" for="val-suggestions">Uid
                                                         <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="number" class="form-control" id="val-currency" name="val-currency" placeholder="mobile">
+                                                        <input type="text" class="form-control" id="val-username"
+                                                            name="val-username" placeholder="Enter uid">
                                                     </div>
                                                 </div>
-                                                
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-form-label" for="val-currency">Mobile
+                                                        number
+                                                        <span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-6">
+                                                        <input type="number" class="form-control" id="val-currency"
+                                                            name="val-currency" placeholder="mobile">
+                                                    </div>
+                                                </div>
+
                                                 <div class="form-group row">
                                                     <label class="col-lg-4 col-form-label" for="val-currency">Visa
                                                         <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="text" class="form-control" id="val-currency" name="val-currency" placeholder=" visa">
+                                                        <input type="text" class="form-control" id="val-currency"
+                                                            name="val-currency" placeholder=" visa">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-xl-6">
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label" for="val-currency">Passport number
+                                                    <label class="col-lg-4 col-form-label" for="val-currency">Passport
+                                                        number
                                                         <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="text" class="form-control" id="val-currency" name="val-currency" placeholder="passport number">
+                                                        <input type="text" class="form-control" id="val-currency"
+                                                            name="val-currency" placeholder="passport number">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label" for="val-currency">Emirates Id number
+                                                    <label class="col-lg-4 col-form-label" for="val-currency">Emirates
+                                                        Id number
                                                         <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="text" class="form-control" id="val-currency" name="val-currency" placeholder="Emirates Id number">
+                                                        <input type="text" class="form-control" id="val-currency"
+                                                            name="val-currency" placeholder="Emirates Id number">
                                                     </div>
                                                 </div>
 
 
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label" for="val-currency">Insurance number
+                                                    <label class="col-lg-4 col-form-label" for="val-currency">Insurance
+                                                        number
                                                         <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="text" class="form-control" id="val-currency" name="val-currency" placeholder=" Insurance">
+                                                        <input type="text" class="form-control" id="val-currency"
+                                                            name="val-currency" placeholder=" Insurance">
                                                     </div>
                                                 </div>
 
-                                              
+
 
                                                 <div class="form-group row">
                                                     <label class="col-lg-4 col-form-label" for="val-skill">Category
@@ -568,7 +594,7 @@
                                                             <option value="html">category 1</option>
                                                             <option value="css">category 2</option>
                                                             <option value="javascript">category 3</option>
-                                                            
+
                                                         </select>
                                                     </div>
                                                 </div>
@@ -582,7 +608,7 @@
                                                             <option value="html">company1</option>
                                                             <option value="css">company2</option>
                                                             <option value="javascript">company3</option>
-                                                           
+
                                                         </select>
                                                     </div>
                                                 </div>
@@ -596,49 +622,58 @@
                                                             <option value="html">branch 1</option>
                                                             <option value="css">branch 2</option>
                                                             <option value="javascript">branch 3</option>
-                                                           
+
                                                         </select>
                                                     </div>
                                                 </div>
-                                                
+
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label" for="val-currency">Passport expiry date
+                                                    <label class="col-lg-4 col-form-label" for="val-currency">Passport
+                                                        expiry date
                                                         <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="date" class="form-control" id="val-currency" name="val-currency" >
+                                                        <input type="date" class="form-control" id="val-currency"
+                                                            name="val-currency">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label" for="val-website">Visa expiry date
+                                                    <label class="col-lg-4 col-form-label" for="val-website">Visa expiry
+                                                        date
                                                         <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="date" class="form-control" id="val-website" name="val-website" >
+                                                        <input type="date" class="form-control" id="val-website"
+                                                            name="val-website">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label" for="val-phoneus">Emirates Id expiry date
+                                                    <label class="col-lg-4 col-form-label" for="val-phoneus">Emirates Id
+                                                        expiry date
                                                         <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="date" class="form-control" id="val-phoneus" name="val-phoneus" >
+                                                        <input type="date" class="form-control" id="val-phoneus"
+                                                            name="val-phoneus">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label" for="val-phoneus">Insurance expiry date
+                                                    <label class="col-lg-4 col-form-label" for="val-phoneus">Insurance
+                                                        expiry date
                                                         <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="date" class="form-control" id="val-phoneus" name="val-insurance" >
+                                                        <input type="date" class="form-control" id="val-phoneus"
+                                                            name="val-insurance">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label" for="val-digits">passport <span
-                                                            class="text-danger">*</span>
+                                                    <label class="col-lg-4 col-form-label" for="val-digits">passport
+                                                        <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="file" class="form-control" id="val-digits" name="val-digits">
+                                                        <input type="file" class="form-control" id="val-digits"
+                                                            name="val-digits">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -646,7 +681,8 @@
                                                             class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="file" class="form-control" id="val-number" name="val-number">
+                                                        <input type="file" class="form-control" id="val-number"
+                                                            name="val-number">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -654,25 +690,30 @@
                                                         <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="file" class="form-control" id="val-range" name="val-range" placeholder="4">
+                                                        <input type="file" class="form-control" id="val-range"
+                                                            name="val-range" placeholder="4">
                                                     </div>
                                                 </div>
 
 
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label" for="val-range">Other document
+                                                    <label class="col-lg-4 col-form-label" for="val-range">Other
+                                                        document
                                                         <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="file" class="form-control" id="val-range" name="val-range" placeholder="">
+                                                        <input type="file" class="form-control" id="val-range"
+                                                            name="val-range" placeholder="">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-lg-4 col-form-label" for="val-range">Notification mail
+                                                    <label class="col-lg-4 col-form-label" for="val-range">Notification
+                                                        mail
                                                         <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-6">
-                                                        <input type="email" class="form-control" id="val-range" name="val-range" placeholder="mail address">
+                                                        <input type="email" class="form-control" id="val-range"
+                                                            name="val-range" placeholder="mail address">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -687,7 +728,7 @@
                             </div>
                         </div>
                     </div>
-                   
+
                 </div>
             </div>
         </div>
